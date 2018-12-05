@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title></title>
+  <script src="popup.js"></script>
+  </head>
+  <body>
+
+<style>
+body {
+    width:140px;
+    height:100%;
+}
+.dropbtn {
+    background-color: #9fd468;
+    color: #00000;
+	width:125px;
+    height: 25px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    font-size: 12px;
+    color: #00000;
+    background: #9fd468;
+    padding: 5px;
+}
+/* // */
+.checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 20px;
+}
+.checkbox + label {
+  position: relative;
+  padding: 0 0 0 60px;
+  cursor: pointer;
+}
+.checkbox + label:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  background: #CDD1DA;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+  transition: .2s;
+}
+.checkbox + label:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: .2s;
+}
+.checkbox:checked + label:before {
+  background: #9FD468;
+}
+.checkbox:checked + label:after {
+  left: 26px;
+}
+.checkbox:focus + label:before {
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px rgba(255,255,0,.7);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid #9fd468;
+}
+
+p {
+  margin: 0px
+}
+
+</style>
+	<center>
+		<input type="checkbox" class="checkbox" id="checkbox" />
+		<label for="checkbox" style="margin-right: 5px">Включить</label>
+
+		<br />
+
+		<div id="enabled" hidden=true>
+
+			<select class="dropdown" id="dropdown" style="margin-top: 15px; margin-bottom: 10px;">
+        <option value="0">Руб. (₽)</option>
+        <option value="1">Грн. (₴)</option>
+        <option value="2">USD  ($)</option>
+			</select>
+
+			<br />
+			<span>Ваш персональный бонус:</span>
+			<input type="text" id="inputtext" name="fname" placeholder="% вашей скидки" style="margin-top: 15px; width: 125px; margin-bottom: 10px;">
+
+      <span id='bonus'></span>
+
+      <br />
+
+			<button class="dropbtn" id="save" style="margin-top: 15px; width: 125px;">Сохранить?</button>
+		</div>
+		<p style="color:green;" id="savesucc" hidden>Сохранено. Пожалуйста, обновите страницу, чтобы увидеть изменения.</p>
+		<p style="font-size: 10px;margin-top: 15px;">With ❤ by <a href="https://tab.moe" target="_blank">TAB_mk</a> for</p>
+    <p>&copy; <a href="http://keys-dota2.ru" target="_blank">keys-dota2.ru</a><p>
+	</center>
+  </body>
+</html>

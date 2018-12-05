@@ -1,0 +1,53 @@
+{
+	"author": "TAB_mk",
+
+	"manifest_version": 2,
+
+	"name": "keys-dota2.ru price",
+	"version": "1.0",
+	"icons": {
+			"16": "images/keys-dota2.ru_16.png",
+			"32": "images/keys-dota2.ru_32.png",
+			"48": "images/keys-dota2.ru_48.png",
+			"64": "images/keys-dota2.ru_64.png",
+			"128": "images/keys-dota2.ru_128.png"
+	},
+
+	"content_scripts": [
+		{
+			"matches": [ "*://steamcommunity.com/tradeoffer/*"],
+			"js": ["jquery.js", "index.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": [ "*://steamcommunity.com/id/*/tradeoffers/*", "*://steamcommunity.com/profiles/*/tradeoffers/*", "*://steamcommunity.com/id/*/tradeoffers", "*://steamcommunity.com/profiles/*/tradeoffers" , "*://steamcommunity.com/id/*/inventory/*", "*://steamcommunity.com/id/*/inventory/*"],
+			"js": ["tradeofferAll.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": [ "*://steamcommunity.com/*"],
+			"js": ["jquery.js", "bonus.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+		"*://steamcommunity.com/tradeoffer/new*",
+    "*://spreadsheets.google.com/*",
+		"storage"
+	],
+  "background": {
+      "scripts": ["jquery.js", "background.js"]
+  },
+	"browser_action": {
+		  "default_icon": {
+			"16": "images/keys-dota2.ru_16.png",
+			"32": "images/keys-dota2.ru_32.png",
+			"48": "images/keys-dota2.ru_48.png",
+			"64": "images/keys-dota2.ru_64.png",
+			"128": "images/keys-dota2.ru_128.png"
+		  },
+		  "default_title": "keys-dota2.ru price",
+		  "default_popup": "popup/popup.html"
+	},
+	"web_accessible_resources": ["images/*.png", "*.js", "*.css"]
+}
