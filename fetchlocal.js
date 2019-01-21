@@ -38,7 +38,7 @@ $J( document ).ready(function() {
       $J('.keysdota2bottype').html(BOTS[g_ulTradePartnerSteamID]);
     } else {
       $J('.keysdota2bot').html('⚠️⚠️⚠️ Внимание ⚠️⚠️⚠️');
-      $J('.keysdota2bottype').html('Это не аккаунт keys-dota.ru');
+      $J('.keysdota2bottype').html('Это не аккаунт keys-dota2.ru');
     }
   }, 350);
 });
